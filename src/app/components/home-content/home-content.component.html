@@ -1,0 +1,51 @@
+<div class="home-content container">
+    <section class="section home__reason center">
+        <h1 class="im-title">Pourquoi Investir à Madagascar ?</h1>
+        <p class="paragraphe">Madagascar est une destination d'investissement en Afrique qui offre de nombreux avantages. Nous allons donc explorer les raisons pour lesquelles investir à Madagascar peut être une décision judicieuse pour les investisseurs en quête d'opportunités prometteuses en Afrique.</p>
+        <div class="reason__card">
+            <ng-container *ngFor="let item of reasonList">
+                <app-reason-card [reason]="item"></app-reason-card>
+            </ng-container>
+        </div>
+    </section>
+    <section class="section home__process">
+        <h1 class="im-title">Comment procéder ?</h1>
+        <div class="description">
+            <p class="paragraphe">Pour investir avec succès à Madagascar, il est important de comprendre les règles et les réglementations, ainsi que les opportunités et les défis du marché.</p>
+            <p class="paragraphe">Avec une planification adéquate et une bonne stratégie, Madagascar peut offrir des opportunités d'investissement intéressantes pour les entrepreneurs et les investisseurs du monde entier.</p>
+        </div>
+        <app-process-card></app-process-card>
+    </section>
+    <!-- <aside class="section home__actuality">
+        
+        <h1 class="im-title">Quesls sont les évènements ?</h1>
+        <p class="paragraphe">Voici un évènement ou un produit de la saison</p>
+    </aside> -->
+    <section class="section home__menu center">
+        <h1 class="im-title">Qu'attendez-vous pour investir ?</h1>
+        <p class="paragraphe">La liste suivante reflète nos secteurs porteurs qui offrent des opportunités d'investissement intéressantes à Madagascar. Ces secteurs sont en constante évolution et représentent des domaines clés pour la croissance économique du pays. Découvrez-les ci-dessous : </p>
+        <div class="menus">
+            <div class="hexagon__area--first hexagon__area">
+                <ng-container *ngFor="let item of menusList | slice :0 :4 ; let i = index">
+                    <app-menus-card [menu]="item"></app-menus-card>
+                </ng-container>
+            </div>
+            <div class="hexagon__area--last hexagon__area">
+                <ng-container *ngFor="let item of menusList | slice : 4; let i = index">
+                    <app-menus-card [menu]="item"></app-menus-card>
+                </ng-container>
+            </div>
+        </div>
+    </section>
+    <section class="section home__condition">
+        <h1 class="im-title">Découvrir les réglementations ?</h1>
+        <div class="condition__area">
+            <ng-container *ngFor="let item of conditionList">
+                <app-condition-card [item]="item"></app-condition-card>
+            </ng-container>
+        </div>
+    </section>
+    <!-- <section class="home__partners">
+        <h1 class="im-title">Nos partenaires ?</h1>
+    </section> -->
+</div>

@@ -1,0 +1,407 @@
+@import '../../../../styles.scss';
+.nav {
+    width: 100vw;
+    height: 100px;
+    background-color: var(--bg-primary);
+    padding: 10px 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    @media (width < 960px) {
+        background-color: var(--bg-color-900);
+        height: 72px;
+    }
+    .nav__container {
+        @include flex-row-space-center;
+        width: 100%;
+        // ================= Style NAVIGATION Logo + 3 menus START =========================  //
+        .nav__logo {
+            width: clamp(250px, 17%, 250px);
+            a .nav__image {
+                width: 100%;
+                display: block;
+                @media (width < 960px) {
+                    display: none;
+                }
+            }
+            a .nav__image--phone {
+                display: none;
+                @media (width < 960px) {
+                    display: block;
+                    margin-left: 20px;
+                }
+            }
+        }
+        .nav__menus{
+            width: clamp(419px,53%, 719px);
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: row;
+            margin-left: 40px;
+            gap: 30px;
+            >li{
+                position: relative;
+                padding-bottom: 10px;
+                &::after {
+                    @include element-pseudo-style;
+                    bottom: 0;
+                    left: 0;
+                    background-color: var(--text-white-900);
+                    border-radius: 3px;
+                    height: 5px;
+                    @include transition-style(scaleX(0),right, 300ms, ease);
+                }
+                &:hover,&.active {
+                    cursor: pointer;
+                    &::after{
+                        transform-origin: left;
+                        transform: scaleX(1);
+                    }
+                }
+                &> .nav__link {
+                    color: var(--text-white-900);
+                    font-size: 1rem;
+                    font-weight: 500;
+                    line-height: 20px;
+                }
+            }
+        }
+        // ================= Style NAVIGATION Logo + 3 menus END =========================  //
+
+        
+        // ================= Style MENU Right START =========================  //
+        .nav--end {
+            width: clamp(200px, 35%,750px);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 30px;
+            @media (1136px < width < 1444px){
+                width: 50%;
+            }
+            
+            .nav__search{
+                form span {
+                    i {
+                        right: 10px;
+                        color: var(--text-white-900);
+                        position: relative;
+                        width: 50px;
+                        height: 50px;
+                        @include center-text(47px);
+                        padding: 3px;
+                        font-size: 1.5rem;
+                        margin-bottom: 5px;
+                        cursor: pointer;
+                        z-index: 3;
+                        &::after {
+                            opacity: 1;
+                            border-radius: 50%;
+                            @include btn-pseudo-style;
+                            background-color: var(--bg-transparency);
+                            transition: opacity 200ms 400ms ease;
+                        }
+                    }
+                    .input:focus{
+                        transform: translateX(0);
+                        opacity: 1;
+                        &~ label i::after{
+                            opacity: 0;
+                        }
+                    }
+                    .input{
+                        @media (width < 1136px){
+                            display: none;
+                        }
+                        background: transparent;
+                        color: var(--text-white-900);
+                        border-bottom: 1px solid var(--text-white-900);
+                        transform: translateX(50px);
+                        opacity: 0;
+                        transition: transform 1s ease-out, opacity 400ms 200ms ease;
+                        z-index: -1;
+                        &::placeholder{
+                            color: var(--text-white-900);
+                        }
+                    }
+                }
+            }
+            .day-night,
+            .nav__language img {
+                width: 30px;
+                height: 30px;
+            }
+            .day-night {
+                text-align: center;
+                line-height: 30px;
+                border-radius: 50%;
+                i {
+                    font-size: 1.5rem;
+                    &.fa-moon{
+                        color: var(--text-black-700);
+                    }
+                    &.fa-sun {
+                        color: var(--secondary-color);
+                    }
+                }
+            }
+            .nav__burger {
+                cursor: pointer;
+                position: relative;
+                width: 50px;
+                height: 50px;
+                @include center-block;
+                flex-direction: column;
+                margin-right: 20px;
+                @include create-bg-on-hover(var(--bg-transparency));
+                &::after {
+                    border-radius: 50%;
+                }
+                .bar:nth-child(1), .bar:nth-child(3) {
+                    transform: rotate(0);
+                    transition: transform 250ms ease-in-out;
+                }
+                .bar {
+                    &:hover {cursor: pointer;}
+                    display: block;
+                    width: 20px;
+                    text-align: center;
+                    line-height: 50px;
+                    height: 3px;
+                    border-radius: 2px;
+                    background-color: var(--text-white-900);
+                    @media (width < 960px){
+                        background-color: var(--text-black-700);
+                    }
+                    &:not(:nth-child(1)){
+                        margin-top: 4px;
+                    }
+                }
+                &.active {
+                    .bar:nth-child(1){
+                        transform: rotate(45deg);
+                        position: absolute;
+                    }
+                    .bar:nth-child(2){
+                        display: none;
+                    }
+                    .bar:nth-child(3){
+                        transform: rotate(-45deg);
+                        position: absolute;
+                        top: 19px;
+                    }
+                }
+            }
+        }
+        // ================= Style MENU Right END =========================  //
+
+        // ================= Style Menu hide (NAV STICKY) START ========================= //
+        .hide-menu:checked {
+            &+ .nav-sticky {
+                transform: translateX(270px);
+                &:hover {
+                    @media (width >= 363px){
+                        transform: translateX(0);
+                    }
+                }
+            }
+        }
+        .nav-sticky {
+            position: fixed;
+            top: 100px;
+            padding-top: 10px;
+            bottom: 0;
+            right: 0;
+            height: 100vh;
+            background: var(--bg-color-900);
+            width: 330px;
+            transform: translateX(330px);
+            overflow-y: scroll;
+            overflow: hidden;
+            transition: transform 300ms linear;
+            
+            @media (width < 960px) {
+                top: 72px;    
+            }
+            @include shadow-style;
+            li {
+                position: relative;
+                div {
+                    .nav__link {
+                        position: relative;
+                        color: var(--text-black-700);
+                        font-size: 14px;
+                        display: table;
+                        width: 100%;
+                        padding: 10px;
+                        @include create-bg-on-hover(var(--bg-color-100));
+                        .fa-chevron-down {
+                            transform: rotate(0deg) translateY(0);
+                            transition: transform 250ms ease-in;
+                        }
+                        &.active{
+                            @include create-bg-on-hover(var(--primary-color));
+                        }
+                        &.active{
+                            background: var(--primary-color);
+                            i:not(.fa-chevron-down), .menu-sticky__nav {
+                                color: var(--text-white-900);
+                                transform: scale(1.2);
+                            }
+                            .fa-chevron-down {
+                                color: var(--text-white-900);
+                                transform: rotate(180deg) translateY(8px);
+                            }
+                            &~ .menu__dropdown ul{
+                                display: block;
+                            }
+                        }
+                        i {
+                            position: relative;
+                            width: 40px;
+                            height: 30px;
+                            top: 4px;
+                            font-size: 1.2rem;
+                            text-align: center;
+                        }
+                        .menu-sticky__nav {
+                            position: relative;
+                            top: 4px;
+                            margin-left: 10px;
+                            font-weight: 500;
+                            padding: 15px;
+                            font-size: .9rem;
+                            text-transform: uppercase;
+                        }
+                    }
+                    .menu__dropdown {
+                        background-color: var(--bg-color-100);
+                        ul{
+                            background-color: var(--bg-color-100);
+                            padding-top: 10px;
+                            display: none;
+                            transition: display 300ms ease-in-out;
+                            li{
+                                border-bottom: 1px solid var(--bg-color-50);
+                                
+                                &:not(:nth-child(1)){
+                                    a {
+                                        margin-top: 10px;
+                                    }
+                                }
+                                a{
+                                    &.active{
+                                        margin-top: 0px;
+                                        i {
+                                            background-color: var(--primary-color);
+                                            padding: 5px;
+                                            color: var(--text-white-900);
+                                        }
+                                    }
+                                    color: var(--text-black-700);
+                                    display: table;
+                                    i {
+                                        width: 65px;
+                                        height: 30px;
+                                        text-align: center;
+                                    }
+                                    span {
+                                        margin-left: 10px;
+                                    }
+                                }
+                            } 
+                        }
+                    }
+                }
+            }
+        }
+        // ================= Style Menu hide (NAV STICKY) END ========================= //
+
+        // ================= BOTTOM Menu phone mode START ========================= //
+        &--phone {
+            background-color: var(--bg-color-100);
+            position: fixed;
+            bottom: 0;
+            width: 100vw;
+            height: 70px;
+            @media( width < 320px) {
+                @include flex-row-space-center;
+            }
+            @include center-block;
+            .nav__menus {
+                position: relative;
+                @include flex-row-around-center;
+                width: clamp(320px, 100%, 100%);
+                li {
+                    position: relative;
+                    height: 70px;
+                    width: 100%;
+                    z-index: 1;
+                    &.active {
+                        .nav__link i {
+                            transform: translateY(-32px);
+                            color: var(--text-white-900);
+                            &::after {
+                                @include btn-pseudo-style;
+                                @media (width < 530px){
+                                    width: 40px;
+                                    height: 40px;
+                                    top: 24%;
+                                    left: -6px;
+                                }
+                                width: 70px;
+                                left: -17px;
+                                border-radius: 50%;
+                                background-color: var(--primary-color);
+                            }
+                        }
+                        .nav__link span {
+                            opacity: 1;
+                            @media (width < 530px){
+                                transform: translateY(10px);
+                            }
+                        }
+                    }
+                    .nav__link {
+                        position: relative;
+                        @include center-block;
+                        text-align: center;
+                        flex-direction: column;
+                        width: 100%;
+                        font-weight: 500;
+                        font-size: 1rem;
+                        i {
+                            position: relative;
+                            display: block;
+                            line-height: 75px;
+                            
+                            @media (width < 530px){
+                                font-size: 1.5em;
+                            }
+                            font-size: 2em;
+                            color: var(--text-black-700);
+                            transform: translateY(0);
+                            transition: transform 500ms;
+                        }
+                        span {
+                            position: absolute;
+                            color: var(--text-black-700);
+                            font-weight: 400;
+                            font-size: .9em;
+                            letter-spacing: 0.05em;
+                            opacity: 0;
+                            transform: translateY(20px) translateX(-5px);
+                            transition: opacity 500ms, transform 500ms;
+                        }
+                    }
+                }
+            }
+
+        }
+        // ================= BOTTOM Menu phone mode END ========================= //
+    }
+}

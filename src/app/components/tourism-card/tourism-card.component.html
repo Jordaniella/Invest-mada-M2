@@ -1,0 +1,15 @@
+
+<div class="card" routerLink="/tous-les-secteurs/tourisme/{{site._id}}">
+    <div class="card__image">
+        <img [src]="image" alt="{{site.name}}">
+    </div>
+    <div class="card__content">
+      <div class="content">
+        <h3> {{site.name}} </h3>
+        <p> {{site.desc}}</p>
+      </div>
+    </div>
+    <footer class="card__footer">
+        <a routerLink="/regions/{{site.region}}" class="card__link"> <i class="fa-solid fa-location-dot"> </i> <span>{{site.region}}</span> </a>
+    </footer>
+</div>

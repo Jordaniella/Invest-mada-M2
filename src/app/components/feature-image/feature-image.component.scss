@@ -1,0 +1,51 @@
+@import '../../../styles.scss';
+.feature-image {
+  position: relative;
+  .feature__container {
+    width: 100vw;
+    height: 500px;
+    background: var(--bg-primary);
+    background-image: radial-gradient(
+      closest-side at 200px 120px,
+      var(--tertiary-color) 20%,
+      var(--bg-primary) 100%
+    );
+    @include flex-row-space-center;
+    align-items: flex-start;
+    gap: 100px;
+    padding: 0 30px;
+    @media (width < 800px) {
+      flex-direction: column;
+      justify-content: center;
+    }
+    .content {
+      width: 50%;
+      @media (width < 800px) {
+          align-items: center;
+        width: 100%;
+      }
+      &--image{
+        @include center-block;
+      }
+    }
+  }
+  .feature__svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    svg {
+      position: relative;
+      display: block;
+      width: calc(121% + 1.3px);
+      height: 144px;
+      transform: rotateY(180deg);
+    }
+    .shape-fill {
+      fill: var(--bg-color-900);
+    }
+  }
+}

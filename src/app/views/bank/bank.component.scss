@@ -1,0 +1,7 @@
+@import '../../../styles.scss';
+.banks {
+    @include flex-row-space-center;
+    flex-wrap: wrap;
+    margin: 0 50px;
+    gap: 30px;
+}

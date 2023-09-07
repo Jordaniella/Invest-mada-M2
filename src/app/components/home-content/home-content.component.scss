@@ -1,0 +1,51 @@
+@import '../../../styles.scss';
+.section {
+    padding-top: 50px;
+    @include flex-column-space;
+    gap: 50px;
+    min-height: 70vh;
+    .im-title {
+        text-align: center;
+    }
+    &.center {
+        align-items: center;
+    }
+    &.home__reason{
+        .reason__card {     
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+    }
+    &.home__process {
+        align-items: none;
+        .description {
+            @include center-block;
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+    &.home__menu {
+        .menus {
+            width: 100%;
+            height: 420px;
+            @include center-block;
+            flex-direction: column;
+            .hexagon__area{
+                display: flex;
+                &--last {
+                    transform: translateY(-50px);
+                }
+            }
+        }
+    }
+    &.home__condition {
+        .condition__area {
+            display: flex;
+            gap: 50px;
+            @include center-block;
+        }
+    }
+}

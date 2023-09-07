@@ -1,0 +1,10 @@
+@import "../../../styles.scss";
+
+.sites {
+  gap: 50px;
+  width: 100vw;
+  padding: 20px 70px;
+  overflow: hidden;
+  flex-wrap: nowrap;
+  @include flex-row-space-center;
+}

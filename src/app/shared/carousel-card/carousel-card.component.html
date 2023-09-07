@@ -1,0 +1,25 @@
+
+    <div class="content">
+        <div class="landing__icone">
+            <i class="fa-solid fa-bolt"></i>
+        </div>
+        <div class="awareness">
+            <p class="awareness__number">+{{gain[1]}}<span>%</span></p>
+            <span>Connaissances acquis</span>
+        </div>
+        <div class="success">
+            <i class="fa-solid fa-clock"></i>
+            <span>{{gain[0]}}% de gains de temps</span>
+        </div>
+        <div class="landing__title">
+            <p *ngIf="title != ''">{{title}}</p>
+            <p *ngIf="title == ''">Investir à Madagascar</p>
+        </div>
+        <div class="landing__description">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>Planifications de projets garanties</span>
+        </div>
+        <div class="landing__image">
+            <img [src]="image" alt="{{title}}">
+        </div>
+    </div>

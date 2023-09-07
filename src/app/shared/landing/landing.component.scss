@@ -1,0 +1,35 @@
+@import '../../../styles.scss';
+.landing {
+  color: var(--text-black-700);
+  @include center-block;
+  margin-top: 20px;
+  .landing__container {
+    width: 95%;
+    max-width: 95%;
+    background-color: var(--bg-color-900);
+    height: 500px;
+    @include flex-row-space-center;
+    // gap: 30px;
+    .content {
+        display: flex;
+        flex-direction: column;
+        &.landing__text {
+          width: 43%;
+          gap: 30px;
+          h1 {
+            text-align: left;
+            font-size: 2.5rem;
+            span {
+              color: var(--primary-color);
+            }
+          }
+          p {
+            color: var(--text-black-700);
+          }
+        }
+        &.landing__image {
+          height: 100%;
+        }
+    }
+  }
+}

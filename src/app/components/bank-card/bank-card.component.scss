@@ -1,0 +1,90 @@
+@import "../../../styles.scss";
+
+.bank {
+    position: relative;
+    background: var(--bg-color-700);
+    box-shadow: 0 8px 6px rgba(0,0,0,.2);
+    @include flex-column-space-center;
+    border-radius: 20px;
+    width: 425px;
+    height: 550px;
+    padding: 30px;
+    .bank__image {
+        position: absolute;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+        transform: scale(1.06);
+        @include shadow-style;
+        overflow: hidden;
+        top: -20px;
+        width: 100%;
+        height: 35%;
+        img {
+            position: absolute;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            object-position: 10% 0;
+        }
+    }
+    .bank__content {
+        text-align: center;
+        position: relative;
+        top: 36%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .bank__title {
+            color: var(--secondary-color);
+        }
+        p {
+            color: var(--text-black-700);
+            font-size: .9rem;
+        }
+        .bank__infos {
+            @include flex-row-space;
+            border-top: 2px solid #EAEAEA;
+            .content {
+                width: 50%;
+                padding: 10px 5px;
+                &:nth-child(1) {
+                    border-right: 2px solid #EAEAEA;
+                }
+                .item {
+                    @include flex-row-space;
+                    margin-bottom: 10px;
+                    i {
+                        width: 20%;
+                        color: var(--secondary-color);
+                    }
+                    span {
+                        width: 80%;
+                        color: var(--text-black-700);
+                        font-size: .8rem;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        position: relative;
+        bottom: 0;
+        margin-top: 30px;
+        width: 100%;
+        @include flex-row-space-center;
+        overflow: hidden;
+        .bank__logo {
+            width: 51px;
+            height: 44px;
+        }
+        .btn {
+            // transform: translateX(100%);
+            padding: 10px 25px;
+            border-radius: 10px;
+            i {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}

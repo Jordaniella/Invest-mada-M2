@@ -1,0 +1,10 @@
+<main class="main">
+    <!-- <app-landing [title]="'title'" [content]="['textContent']"></app-landing> -->
+    <div class="container">
+        <section class="section banks">
+            <ng-container *ngFor="let item of allBanks$ | async">
+                <app-bank-card [bank]="item"></app-bank-card>
+            </ng-container>
+        </section>
+    </div>
+</main>

@@ -1,0 +1,50 @@
+// Principal colors
+:root {
+    --primary-color: #00bf8e;
+    --secondary-color: #007558;
+    --tertiary-color:#4fceb0;
+    // Others colors
+    --other-color: #fdbe00;
+    
+    // Colors and background color
+    
+    --bg-color-900: #ffffff;
+    --bg-primary: #00bf8e;
+    --bg-color-100: #f8fffd;
+    --bg-color-500: #f7f7f7;
+    --bg-color-700: #ffffff;
+    --bg-color-50: #dae4e1;
+    --bg-shadow: rgba(0,0,0,.2);
+    // --bg-color-900: #ffffff;
+    // --bg-primary: #00bf8e;
+    // --bg-color-100: #f8f8f7;
+    // --bg-color-500: #f0f0ef;
+    // --bg-color-700: #e6e6e5;
+    // --bg-color-50: #828281;
+    --text-white-900: #ffffff;
+    --text-black-700: #465c56;
+    --text-black-50: #2c2c2c;
+    --bg-transparency:rgba(0,0,0, .1);
+
+    // Font
+    --primary-font: "Poppins";
+}
+
+body.dark {
+
+    // Colors and background color
+    --bg-primary: #292929;
+    --secondary-color: #eceeed;
+    --tertiary-color:#3d3d3d;
+    --bg-transparency:rgba(255,255,255, .1);
+    --bg-color-900: #313131;
+    --bg-color-100: #353535;
+    --bg-color-700: #3f3f3f;
+    --bg-color-500: #443f3f;
+    --bg-color-50: #393f44;
+    --bg-shadow: rgba(255,255,255,.4);
+    --text-white-900: #ffffff;
+    --text-black-700: #b6b6b6;
+    --text-black-50: #dddddd;
+}
+

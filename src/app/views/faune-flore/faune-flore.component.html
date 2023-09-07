@@ -1,0 +1,14 @@
+<main class="main">
+    <app-landing [title]="title" [content]="textContent" [miniTitle]="'Faune et Flore'"[gain]="[10,5]" [images]="'assets/carousel/fond_1.jpg'"></app-landing>
+    <div class="container">
+        <section class="section bios">
+            <ng-container *ngFor="let item of allFaune | paginate: {itemsPerPage:itemPerPage, currentPage:p} ">
+                <app-faune-flore-card [pieces]="item"></app-faune-flore-card>
+            </ng-container>
+            <pagination-controls (pageChange)="p = $event"
+            previousLabel=""
+            nextLabel=""></pagination-controls>
+        </section>
+    </div>
+
+</main>

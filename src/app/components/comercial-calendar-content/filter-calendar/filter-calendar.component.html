@@ -1,0 +1,8 @@
+<div class="filter__container">
+    <div class="item" *ngFor="let item of allCat" [ngClass]="{'active':item.isSelected}" (click)="selectCategory(item.name)">
+        <div class="item__image">
+            <img [src]="item.image" alt="Invest Mada Catégorie de Produit ({{item.name}})">
+        </div>
+        <span class="item__text">{{item.name}}</span>
+    </div>
+</div>

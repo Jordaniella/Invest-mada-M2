@@ -1,0 +1,118 @@
+<nav class="nav">
+  <div class="nav__container">
+    <!-- ================= NAVIGATION Logo + 3 menus START ========================= -->
+    <div class="nav__logo">
+      <a routerLink="/">
+        <img
+          src="../../../assets/white-logo.png"
+          alt="Logo Invest MADA"
+          class="nav__image"
+        />
+        <img
+          src="../../../assets/mini-logo.png"
+          alt="Logo Invest MADA"
+          class="nav__image--phone"
+        />
+      </a>
+    </div>
+    <ul class="nav__menus" *ngIf="!phoneMode">
+      <li
+        *ngFor="let item of Menus | slice : 0 : 3; let i = index"
+        [ngClass]="{ active: item.status }" (click)="setMenuActive(item.id)"
+      >
+        <a routerLink="{{ item.link }}" class="nav__link"
+          ><i class="{{ item.icon }}"></i><span>{{ item.title }}</span></a
+        >
+      </li>
+    </ul>
+    <!-- ================= NAVIGATION Logo + 3 menus END ========================= -->
+
+    <!-- ================= Menu right START ========================= -->
+    <div class="nav--end">
+      <div class="nav__search" *ngIf="!phoneMode">
+        <form action="">
+          <span>
+            <input
+              class="input"
+              placeholder="Rechercher..."
+              id="search-input"
+            />
+            <label for="search-input"
+              ><i class="fas fa-solid fa-search"></i
+            ></label>
+          </span>
+        </form>
+      </div>
+      <div class="nav__language" *ngIf="!phoneMode">
+        <img
+          src="../../../assets/mini-icon/fr flag.png"
+          alt="Fr Flag"
+          class="icone"
+        />
+      </div>
+      <div class="day-night s-icon" (click)="changeMode()">
+          <i class="fas" [ngClass]="{'fa-sun':!mode, 'fa-moon':mode}"></i>
+      </div>
+      <label class="nav__burger" for="menu-burger" [ngClass]="{'active':burgerActive}">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </label>
+    </div>
+    <!-- ================= Menu right END ========================= -->
+
+    <!-- ================= Menu hide (NAV STICKY) START ========================= -->
+    <input type="checkbox" name="burger" id="menu-burger" class="hide-menu" [(ngModel)]="burgerActive"/>
+    
+    <ul class="nav-sticky">
+      
+      <li *ngFor="let item of Menus | slice : 3 : 10; let i = index"  (click)="setMenuActive(item.id)">
+        <div class="dropdown__content"  *ngIf="item.id === 8">
+          <label class="nav__link" for="menu-dropdown" [ngClass]="{'active':item.status}">
+            <p>
+              <i class="{{ item.icon }}"></i>
+              <span class="menu-sticky__nav">{{ item.title }}</span>
+              <i class="fas fa-solid fa-chevron-down"></i>
+            </p>
+          </label>
+          <div class="menu__dropdown" *ngIf="item.id === 8">
+            <input
+              type="checkbox"
+              name="sticky"
+              id="menu-dropdown"
+              class="hide-menu"
+            />
+            <ul>
+              <li *ngFor="let item of Menus | slice : 10; let i = index" class="none"  (click)="setMenuDropdownActive(i)">
+                <a routerLink="{{ item.link }}"[ngClass]="{'active': dropdownActive[i]}"><i class="{{ item.icon }}"></i><span>{{ item.title }}</span></a>
+              </li>
+              <!-- <li><span class="dayNight"><i class=""></i></span></li> -->
+            </ul>
+          </div>
+        </div>
+        <div *ngIf="item.id !== 8">
+          <a routerLink="{{ item.link }}" class="nav__link" [ngClass]="{'active':item.status}">
+            <i class="{{ item.icon }}"></i>
+            <span class="menu-sticky__nav">{{ item.title }}</span>
+          </a>
+        </div>
+      </li>
+    </ul>
+    <!-- ================= Menu hide (NAV STICKY) END ========================= -->
+  </div>
+
+  <div class="nav__container--phone" *ngIf="phoneMode">
+    <ul class="nav__menus">
+      <li
+        *ngFor="let item of Menus | slice : 0 : 3; let i = index"
+        [ngClass]="{ active: item.status }"  (click)="setMenuActive(item.id)"
+      >
+        <a routerLink="{{ item.link }}" class="nav__link">
+          <i class="{{ item.icon }}"></i>
+          <span>{{ item.title }}</span>
+        </a>
+      </li>
+      <div class="indicator"></div>
+    </ul>
+  </div>
+</nav>

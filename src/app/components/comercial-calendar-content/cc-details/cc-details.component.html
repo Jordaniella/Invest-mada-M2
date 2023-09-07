@@ -1,0 +1,13 @@
+
+<div class="card card__product" *ngIf="selectedProduct$ | async as product">
+    <header>
+        <i class="fa-solid fa-star" *ngIf="product.star"></i>
+      <i class="fa-solid fa-circle-info"></i>
+    </header>
+    <div class="card__image" routerLink="/products/{{product.categorie}}/{{product.productName}}">
+        <img src="{{product.image}}" alt="{{product.productName}}">
+    </div>
+    <h3 class="card__title">{{product.productName}}</h3>
+    <p><span  class="card__stats">{{product.value}} t</span><span> (tonnes) </span>/ années</p>
+    <p class="card__description">{{product.description}}</p>
+</div>

@@ -1,0 +1,37 @@
+<div class="filter">
+  <span class="filter__title">Ajouter un filtre</span>
+  <button class="btn">
+    <label for="filterLabel"
+      ><i class="fa fa-solid fa-plus"></i> &nbsp; Filtrer</label
+    >
+  </button>
+
+  <input type="checkbox" class="hidden" id="filterLabel" />
+  <div class="content">
+    <nav class="navigation">
+      <ul>
+        <li [ngClass]="{ active: activeFilter }" (click)="showFilter()">Nom</li>
+        <li [ngClass]="{ active: !activeFilter }" (click)="showFilter()">
+          Catégories
+        </li>
+      </ul>
+    </nav>
+    <div class="nameContent" [ngClass]="{ active: activeFilter }">
+      <input
+        type="text"
+        name="Name Product"
+        placeholder="Entrer le nom d'un produit"
+        class="btn"
+      />
+      <ul>
+        <li *ngFor="let item of allName$ | async">{{ item }}</li>
+      </ul>
+    </div>
+    <div class="catContent" [ngClass]="{ active: !activeFilter }">
+      <div class="catItem" *ngFor="let item of allCat">
+        <img [src]="item.image" alt="{{ item.name }}" />
+        <p>{{ item.name }}</p>
+      </div>
+    </div>
+  </div>
+</div>

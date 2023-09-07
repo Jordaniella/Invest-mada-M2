@@ -1,0 +1,99 @@
+@import '../../../../styles.scss';
+.footer {
+    @include flex-column-space-center;
+    background: var(--bg-color-100);
+    border: var(--bg-color-50) 1px solid;
+    width: 100vw;
+    min-height: 100px;
+    margin-top: 10vh;
+    .footer-widget {
+        margin: 20px 0;
+        width: 100%;
+        @include flex-row-space-center;
+        @media (width < 892px){
+            @include flex-column-space-center;
+            gap: 40px;
+        }
+        .footer__logo {
+            a .nav__image--phone {
+                display: none;
+                @media (width < 315px){
+                    display: block;
+                }
+            }
+            a .nav__image {
+                @media (width < 315px) {
+                    display:none ;
+                }
+            }
+        }
+        .footer__nav {
+            @media (width < 892px){
+                width: 100%;
+            }
+            width: 60%;
+            @include flex-row-around-center;
+            @media (width <= 500px){
+                @include flex-column-space-center;
+                flex-direction: column-reverse;
+                gap: 30px;
+            }
+            ul{
+                h4 {
+                    color: (var(--primary-color));
+                    text-transform: uppercase;
+                    .fas{
+                        display:none;
+                        @media (width <= 500px){
+                            display: inline-block;
+                            margin-left: 10px;
+                        }
+                    }
+                }
+                .hide-menu:checked ~ li {
+                    display: block;
+                }
+                li {
+                    @media (width <= 500px){
+                        display: none;
+                        transition:  display 300ms ease-in-out;
+                    }
+                    transform: scale(1);
+                    transition: transform 200ms ease-in;
+                    a {
+                        text-transform: none;
+                        color: (var(--text-black-700));
+                    }
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+    .footer__copyright {
+        width: 100%;
+        background-color: (var(--bg-primary));
+        padding: 10px 0;
+        .footer__container {
+            @include flex-row-around-center;
+
+            @media (width < 420px) {
+                @include flex-column-space-center;
+                gap: 20px;
+            }
+            span {
+                text-align: center;
+                color: var(--text-white-900);
+            }
+            .footer__social {
+                a .icone{
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    margin-right: 30px;
+                }
+            }
+        }
+    }
+}

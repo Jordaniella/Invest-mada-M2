@@ -1,0 +1,70 @@
+@import '../../../../styles.scss';
+
+.card {
+    
+    @media(width < 1240px) {
+        margin-top: 30px;
+    }
+    &.card__product {
+        width: 350px;
+        height: 500px;
+        background-color: var(--bg-color-900);
+        // overflow: hidden;
+        gap: 15px;
+    }
+    header {
+        width: 100%;
+        @include flex-row-space;
+        .fa-star {
+            color: var(--other-color);
+        }
+        .fa-circle-info {
+            color: var(--text-black-700);
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        i {
+            font-size: 1.36rem;
+        }
+    }
+    .card { 
+        position: relative;
+        &__image{
+            position: relative;
+            width: 100%;
+            min-height: 200px;
+            max-height: 200px;
+            border-radius: 5px;
+            overflow: hidden;
+            img {
+                object-fit: cover;
+                object-position: 50% 50%;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &__title{
+            color: var(--text-black-700);
+        } 
+    }   
+    p {
+        
+        color: var(--text-black-700);
+    }
+    p:not(.card__description){
+        font-size: 1rem;
+        .card__stats {
+            font-weight: 600;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+        span {
+            font-size: .8rem;
+        }
+    }
+    .card__description {
+        font-size: .8rem;
+    }
+}

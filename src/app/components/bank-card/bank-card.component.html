@@ -1,0 +1,35 @@
+<div class="bank">
+  <div class="bank__image">
+    <img [src]="bank.image" alt="{{bank.name}}">
+  </div>
+  <div class="bank__content">
+    <h2 class="bank__title">{{ bank.name }}</h2>
+    <p class="paragraphe--left">{{ bank.description }}</p>
+    <div class="bank__infos">
+      <div class="content">
+        <div class="item">
+            <i class="fas fa-solid fa-headset"></i>
+            <span>{{bank.telephone}}</span>
+        </div>
+        <div class="item">
+            <i class="fas fa-solid fa-location-dot"></i>
+            <span>{{bank.address}}</span>
+        </div>
+      </div>
+      <div class="content">
+        <div class="item">
+            <i class="fas fa-solid fa-envelope"></i>
+            <span>{{bank.email}}</span>
+        </div>
+        <div class="item">
+            <i class="fas fa-solid fa-globe"></i>
+            <span>{{bank.website}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <img [src]="bank.logo" alt="{{bank.name}}" class="bank__logo">
+    <a routerLink="/institutions-financieres/{{bank._id}}" class="btn btn-primary"><i class="fas fa-solid fa-arrow-right"></i></a>
+  </footer>
+</div>

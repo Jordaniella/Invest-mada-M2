@@ -1,0 +1,81 @@
+@mixin btn-pseudo-style {
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+  }
+  @mixin element-pseudo-style {
+    content: "";
+    width: 100%;
+    position: absolute;
+  }
+  
+  @mixin shadow-style {
+    box-shadow: 0 0 10px rgba(48, 46, 77, 0.15);
+  }
+  
+  @mixin center-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @mixin transition-style($transFunc, $transOrigin, $transTime, $transEfect) {
+    transform: $transFunc;
+    transform-origin: $transOrigin;
+    transition: transform $transTime $transEfect;
+  }
+  
+  @mixin center-text($lineHeight) {
+    text-align: center;
+    line-height: $lineHeight;
+  }
+  
+  @mixin flex-row-space-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  @mixin flex-row-around-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  @mixin flex-row-space {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  @mixin flex-column-space-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  @mixin flex-column-space {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+  }
+  @mixin create-bg-on-hover($bg-color) {
+    &::after {
+      @include btn-pseudo-style;
+      cursor: pointer;
+      opacity: 0;
+      background: $bg-color;
+      transition: opacity 250ms ease;
+    }
+    &:hover::after {
+        opacity: 1;
+    }
+  }

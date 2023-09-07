@@ -1,0 +1,42 @@
+@import "../../../styles.scss";
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin:20px auto;
+    align-items: center;
+    width: 90vw;
+    max-width: 1650px;
+    h1 {
+        font-weight: 900;
+        font-size: 1.5em;
+        font-family: 'Open sans';
+        &.green {
+            color: var(--secondary-color);
+        }
+    }
+    .prev-next {
+        display: inline;
+        .prev, .next {
+            border-radius: 50%;
+            width: 55px;
+            height: 55px;
+            border: none;
+            i {
+                font-size: 21px;
+            }
+        }
+        .prev {
+            background-color: transparent;
+            i {
+                color: var(--secondary-color);
+            }
+        }
+        .next {
+            background-color: var(--other-color);
+            i {
+                color:var(--text-black-700);
+            }
+        }
+    }
+}

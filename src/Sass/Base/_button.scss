@@ -1,0 +1,32 @@
+.btn {
+  border: none;
+  border-radius: 52px;
+  position: relative;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  outline: none;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  transition: background 300ms ease;
+  color: var(--text-white-900);
+  @include create-bg-on-hover(var(--secondary-color));
+  &:hover {
+    background: transparent;
+    cursor: pointer;
+  }
+  &::after {
+    border-radius: 52px;
+  }
+}
+
+.glass {
+  background: rgba(var(--bg-color-900), 0.6);
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(11.1px);
+  -webkit-backdrop-filter: blur(11.1px);
+  border: 1px solid rgba(var(--bg-color-900), 0.44);
+}

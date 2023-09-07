@@ -1,0 +1,129 @@
+[{
+    "id": 1,
+    "type":"simple",
+    "status": true,
+    "icon": "fa fa-home",
+    "title": "Accueil",
+    "link":"/accueil"
+  },
+  {
+    "id": 2,
+    "status": false,
+    "type":"simple",
+    "icon": "fa fa-circle-info",
+    "title": "A-propos",
+    "link":"/a-propos"
+  },
+  {
+    "id": 3,
+    "status": false,
+    "type":"simple",
+    "icon": "fas fa-comment",
+    "title": "Contactez-nous",
+    "link":"/contactez-nous"
+  },
+  {
+    "id": 4,
+    "status": false,
+    "type":"simple",
+    "icon": "fas fa-calendar-days",
+    "title": "évènements",
+    "link":"/evenements"
+  },
+  {
+    "id": 5,
+    "status": false,
+    "type":"simple",
+    "icon": "fa-solid fa-sack-dollar",
+    "title": "investissements",
+    "link":"/investissements"
+  },
+  {
+    "id": 6,
+    "status": false,
+    "type":"simple",
+    "icon": "fas fa-chart-line",
+    "title": "statistiques des produits",
+    "link":"/statistiques"
+  },
+  {
+    "id": 7,
+    "status": false,
+    "type":"simple",
+    "icon": "fas fa-solid fa-calendar",
+    "title": "calendrier commercial",
+    "link":"/calendrier-commercial"
+  },
+  {
+    "id": 8,
+    "status": false,
+    "type":"simple",
+    "icon": "fa-sharp fa-solid fa-share-nodes",
+    "title": "secteurs d'activités",
+    "link":"tous-les-secteurs"
+  },
+  {
+    "id": 16,
+    "status": false,
+    "type":"dropdown",
+    "icon": "fas fa-solid fa-lightbulb",
+    "title": "énergies renouvelables",
+    "link":"/tous-les-secteurs/energies-renouvelables"
+  },
+  {
+    "id": 9,
+    "status": false,
+    "type":"simple",
+    "icon": "fas fa-solid fa-building-columns",
+    "title": "institutions financières",
+    "link":"/institutions-financieres"
+  },
+  {
+    "id": 13,
+    "status": false,
+    "type":"dropdown",
+    "icon": "fas fa-industry fa-solid",
+    "title": "industrie",
+    "link":"/tous-les-secteurs/industrie"
+  },
+  {
+    "id": 16,
+    "status": false,
+    "type":"dropdown",
+    "icon": "fas fa-location-dot fa-solid",
+    "title": "tourisme",
+    "link":"/tous-les-secteurs/tourisme"
+  },
+  {
+    "id": 14,
+    "status": false,
+    "type":"dropdown",
+    "icon": "fa-solid fa-building-wheat",
+    "title": "agriculture",
+    "link":"/tous-les-secteurs/agriculture"
+  },
+  {
+    "id": 11,
+    "status": false,
+    "type":"dropdown",
+    "icon": "fas fa-solid fa-rug",
+    "title": "faune et flore",
+    "link":"/tous-les-secteurs/faune-et-flore"
+  },
+  {
+    "id": 10,
+    "status": false,
+    "type":"dropdown",
+    "icon": "fas fa-solid fa-gem",
+    "title": "mine & textiles",
+    "link":"/tous-les-secteurs/mine"
+  },
+  {
+    "id": 15,
+    "status": false,
+    "type":"dropdown",
+    "icon": "fa-solid fa-road-bridge",
+    "title": "infrastructures",
+    "link":"/tous-les-secteurs/infrastructures"
+  }
+]

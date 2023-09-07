@@ -1,0 +1,103 @@
+@import "../../../styles.scss";
+
+.item.card {
+  width: 300px;
+  height: 300px;
+  @media(width < 430px){
+    width: 200px;
+    height: 200px;
+  }
+  position: relative;
+  padding: 0;
+  z-index: 2;
+  overflow: hidden;
+  &:hover {
+    .about__image img{
+      transform: scale(1.2);
+    }
+    .about__text {
+      opacity: 1;
+      &::before, &::after {
+        transform: scale(1);
+      }
+    }
+  }
+  .about__image {
+    position: absolute;
+    top: 0;
+    width:100%;
+    height:100%;
+    z-index: -1;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      object-fit: cover;
+      object-position: 100%;
+      transform: scaleX(1)  scaleY(1);
+      transition: transform 300ms ease;
+    }
+  }
+  .about__text {
+    cursor: pointer;    
+    @include center-block;
+    padding: 30px 5px;
+    font-family: 'Open sans';
+    flex-direction: column;
+    gap: 20px;
+    inset: 30px;
+    position: absolute;
+    background-color: rgba(0,0,0,0.3);
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+    h4, p {
+      color: var(--text-white-900);
+      text-align: center;
+    }
+    p {
+        text-align: center;
+        font-size: .8rem;
+        line-height: 23px;
+        max-height: calc(23px * 3 );
+        overflow: hidden;
+        position: relative;
+        font-family: 'Nunito sans';
+        &::after {
+            content: '. . .';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    }
+    a {
+      color: var(--text-white-900);
+      font-size:.9rem;
+    }
+    &::before, &::after {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      transform: scaleX(0) scaleY(0);
+      transition: transform 700ms ease;
+      opacity: .9;
+    }
+    &::before{
+      top: -5px;
+      left: -5px;
+      border-top: 5px solid var(--text-white-900);
+      border-left: 5px solid var(--text-white-900);
+      z-index: 1;
+      transform-origin: left top;
+    } 
+    &::after {
+      bottom: -5px;
+      right: -5px;
+      border-bottom: 5px solid var(--text-white-900);
+      border-right: 5px solid var(--text-white-900);
+      transform-origin: right bottom;
+    }
+  }
+}
+
+

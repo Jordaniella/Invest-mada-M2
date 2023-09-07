@@ -1,0 +1,117 @@
+@import "../../../styles.scss";
+
+.filter {
+  @include flex-row-space-center;
+  position: relative;
+  width: 50%;
+  .filter__title {
+    font-size: 1.2rem;
+    color: var(--text-black-700);
+    font-weight: 500;
+  }
+  .btn {
+    color: var(--text-black-700);
+    font-size: 1rem;
+    background-color: var(--bg-color-900);
+    border: solid 1px var(--bg-color-50);
+  }
+
+  .hidden {
+    display: none;
+    &:checked {
+        &+ .content {
+            display: flex;
+        }
+    }
+    }
+  .content {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    z-index: 100;
+    background-color: var(--bg-color-900);
+    width: 500px;
+    height: 500px;
+    padding: 20px;
+    color: var(--text-black-700);
+    border-radius: 20px;
+    @include shadow-style;
+    display: none;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    .navigation {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .navigation ul {
+      @include flex-row-space-center;
+      li:hover {
+        cursor: pointer ;
+      }
+      li.active {
+        padding: 5px;
+        position: relative;
+        color: var(--primary-color);
+        font-weight: 500;
+        &::after {
+          position: absolute;
+          content: "";
+          bottom: 0;
+          left: 0;
+          background-color: var(--primary-color);
+          height: 3px;
+          width: 100%;
+          border-radius: 5px;
+        }
+      }
+    }
+    .nameContent {
+      overflow-y: scroll;
+      input {
+        &::placeholder {
+            color: var(--text-black-700);
+            font-size: .9rem;
+            font-weight: 400;
+        }
+        border: solid 2px var(--bg-color-50);
+        background-color: var(--bg-color-900);
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+    .nameContent,
+    .catContent {
+      margin-top: 20px;
+      height: 90%;
+      width: 100%;
+      &.active {
+        @include flex-column-space;
+      }
+      display: none;
+    }
+    .catContent {
+      .catItem {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        justify-content: flex-start;
+        gap: 10px;
+        border-radius: 20px;
+        transform: scale(1) translateX(0);
+        transition: transform 200ms ease;
+        position: relative;
+        &:hover {
+          transform: scale(1.1) translate(20px);
+          cursor: pointer;
+        }
+        img {
+          width: 50px;
+          height: 50px;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+}

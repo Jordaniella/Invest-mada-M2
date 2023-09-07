@@ -1,0 +1,29 @@
+<main class="main about">
+    <div class="title">
+        <h1>A-propos de nous</h1>
+    </div>
+    <div class="content container">
+        <div class="content__image">
+            <img src="../../../assets/logo-ispm.png" alt="Institut Supérieur Polytechnique de Madagascar">
+        </div>
+        <div class="content__text">
+            <p>Notre entreprise est spécialisée dans le domaine de l'investissement à Madagascar.</p>
+            <p> Forts d'une expérience de plusieurs années, nous avons acquis une connaissance approfondie du marché local et des opportunités d'investissement. Nous sommes engagés à aider nos clients à atteindre leurs objectifs d'investissement en leur offrant des conseils professionnels, des solutions adaptées à leurs besoins et une assistance personnalisée tout au long de leur parcours d'investissement. Nous croyons fermement en l'importance de la transparence et de la confiance dans nos relations avec nos clients, et nous travaillons dur pour mériter leur confiance chaque jour.</p>
+            <p>Notre objectif ultime est de contribuer au développement économique de Madagascar tout en offrant des retours sur investissement attractifs à nos clients.</p>
+        </div>
+    </div>
+    <div class="title">
+        <h1>Nos membres</h1>
+    </div>
+    <div class="content">
+        <div class="prev" (click)="goToPrev()"></div>
+        <div class="next" (click)="goToNext()"></div>
+        <div class="slide hi-slide">
+            <div class="about__members">
+                <div class="other"><app-about-card [member] ="prevSlider"></app-about-card></div>
+                <div class="current"><app-about-card [member] ="currentSlider"></app-about-card></div> 
+               <div class="other"><app-about-card [member] ="nextSlider"></app-about-card></div> -->
+            </div>
+        </div>
+    </div>
+</main>

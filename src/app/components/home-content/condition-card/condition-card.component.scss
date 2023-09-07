@@ -1,0 +1,51 @@
+@import '../../../../styles.scss';
+
+.card.condition {
+    height: 450px;
+    width: 350px;
+    background: var(--bg-color-100);
+    box-shadow: 0px 5px 15px rgba($color: #000000, $alpha: .1);
+    .label {
+        position: absolute;
+        width: 50px;
+        height: 10px;
+        top: 30px;
+        right: 0;
+        background: var(--primary-color);
+        opacity: 50%;
+    }
+    i {
+        font-size: 3rem;
+        color: var(--text-black-700);
+        opacity: 30%;
+    }
+    h4 {
+        color: var(--secondary-color);
+    }
+    p {
+        color: var(--text-black-50);
+        font-size: .9rem;
+        text-align: center;
+    }
+    .btn {
+        background: var(--bg-color-100);
+        border: solid 1px var(--bg-color-50);
+        color: var(--text-black-700);
+        font-weight: 500;
+        font-size: .9rem;
+        position: relative;
+        &::after {
+            @include btn-pseudo-style;
+            background-color: rgba($color: #000000, $alpha: 0.05);
+            border-radius: 52px;
+            transform: scale(0);
+            transition: transform 250ms ease-in;
+            z-index: 1;
+        }
+        &:hover {
+            &::after {
+                transform: scale(1);
+            }
+        }
+    }
+}

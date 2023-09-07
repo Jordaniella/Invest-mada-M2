@@ -1,0 +1,110 @@
+@import "../../../../styles.scss";
+
+.table {
+  color: var(--text-black-700);
+  @include flex-column-space-center;
+  width: 100%;
+  .row {
+    header {
+        width: 100%;
+        background-color: var(--bg-color-100);
+        padding: 2rem 4rem 2rem 2rem;
+        @include flex-row-space-center;
+        gap: 30px;
+        .product__number {
+          font-size: 1.2rem;
+        }
+      .content {
+        @include flex-row-space-center;
+        gap: 40px;
+        .filter__list{
+            @include center-block;
+            gap: 30px;
+            .product__filter {
+              padding: 1rem;
+              font-size: 0.9rem;
+              background-color: var(--bg-color-900);
+              @include center-block;
+              border-radius: 30px;
+              gap: 10px;
+              box-shadow: 1px 1px 2px var(--bg-shadow) inset;
+              &:hover {
+                cursor: pointer;
+              }
+              span {
+                text-transform: uppercase;
+              }
+              i {
+                font-size: 0.8rem;
+                color: var(--bg-color-50);
+              }
+              &.restaure {
+                background: transparent;
+                border: 1px solid var(--bg-color-50);
+                box-shadow: none;
+              }
+            }
+        }
+      }
+    }
+    .col-right {
+      background-color: var(--bg-color-100);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      &.active {
+        @media (width < 1024px) {
+          width: 100%;
+        }
+        width: 60%;
+      }
+      width: 100%;
+      height: 100%;
+      padding: 40px 0;
+      gap: 40px;
+      .products {
+        @include center-block;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      .content {
+        .card {
+          position: relative;
+          background-color: var(--bg-color-900);
+          width: 250px;
+          height: 250px;
+          overflow: hidden;
+          .product__image {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 180px;
+            img {
+              position: absolute;
+              border: none;
+              object-fit: cover;
+              object-position: 32% 64%;
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .product__name {
+            position: relative;
+            top: 165px;
+            color: var(--text-black-50);
+          }
+          .product__region {
+            position: relative;
+            top: 25px;
+            font-size: 0.8rem;
+            color: var(--text-black-700);
+          }
+        }
+      }
+    }
+  }
+  .col-right{
+    @include center-block;
+  }
+}

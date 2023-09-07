@@ -1,0 +1,12 @@
+<main class="main">
+    <app-landing [title]="title" [content]="textContent"[miniTitle]="'Tourisme à Mada'"[gain]="[30,10]" [images]="'assets/carousel/fond_6.jpg'"></app-landing>
+    <div class="container">
+        <p class="paragraphe">Découvrez ce joyau de l'Océan Indien et laissez-vous transporter dans un monde de couleurs, de saveurs et de sensations nouvelles."</p>
+        <app-prev-next [title]="'Nos sites touristiques'"></app-prev-next>
+        <section class="section sites">
+            <ng-container *ngFor="let item of allSite$ | async">
+                <app-tourism-card [site]="item"></app-tourism-card>
+            </ng-container>
+        </section>
+    </div>
+</main>

@@ -1,0 +1,14 @@
+<div class="landing container">
+  <div class="landing__container">
+    <div class="content landing__text">
+      <h1>{{title[0]}} <span>{{title[1]}}</span> {{title[2]}}</h1>
+      <ng-container *ngFor="let paragraphe of content">
+        <p class="paragraphe--left">{{paragraphe}}</p>
+      </ng-container>
+    </div>
+    <div class="content landing__image">
+        <app-carousel-card [image]="images" [title]="miniTitle" [gain]="gain"></app-carousel-card>
+    </div>
+  </div>
+</div>
+

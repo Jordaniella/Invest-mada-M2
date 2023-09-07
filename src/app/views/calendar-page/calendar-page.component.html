@@ -1,0 +1,106 @@
+<div class="main">
+  <div class="container">
+    <header>
+      <app-landing
+        [title]="title"
+        [content]="textContent"
+        [miniTitle]="'Calendrier Commercial'"
+        [gain]="[40, 20]"
+        [images] = "'assets/carousel/calendar.webp'"
+      ></app-landing>
+    </header>
+    <section>
+      <!-- =================  PRODUCTS FILTER  START =================== -->
+      <div class="filter__search">
+        <form action="#" class="form__control">
+          <input
+            type="text"
+            name="searchCalendar"
+            id="searchCalendar"
+            placeholder="Rechercher ..."
+          />
+          <button type="submit" class="btn-submit">
+            <i class="fas fa-solid fa-search"></i>
+          </button>
+          <button type="reset" class="btn-reset">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </button>
+        </form>
+      </div>
+      <!-- =================  PRODUCTS FILTER  END =================== -->
+    </section>
+    <section>
+      <div class="row row__heading">
+        <app-filter-calendar (catSelected)="addCatFilter($event)"></app-filter-calendar>
+        <div class="current__month">
+          <i class="fa-solid fa-chevron-left" (click)="getPrevMonth()"></i>
+          <span>{{ selectAMonth() }}</span>
+          <i class="fa-solid fa-chevron-right" (click)="getNextMonth()"></i>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+        <div class="content">
+            <div class="content__stats">
+                <header>
+                <p>Statistiques <span class="unite">(en tonnes)</span></p>
+                <select name="years" id="year" [(ngModel)]="ngDropdown" (ngModelChange)="getChartData()">
+                    <option *ngFor="let opt of options" [selected]="opt === ngDropdown" [value]="opt" >
+                    {{ opt }}
+                    </option>
+                </select>
+                </header>
+                <ngx-charts-pie-chart
+                *ngIf="productData$ | async"
+                [results]="productData$ | async"
+                [legend]="false"
+                [legendTitle]="'Légende'"
+                [view]="[0, 200]"
+                [labels]="true"
+                [customColors]="colors$ | async"
+                >
+                </ngx-charts-pie-chart>
+            </div>
+            <!-- <div class="content__prevision">
+                <div class="item">
+                <p>Date de Semis</p>
+                <div class="details">
+                    <div class="month"><span>Janvier</span></div>
+                    <span class="tiret"></span>
+                    <div class="month"><span>Mars</span></div>
+                </div>
+                </div>
+                <div class="item">
+                <p>Date de Récoltes</p>
+                <div class="details">
+                    <div class="month"><span>Janvier</span></div>
+                    <span class="tiret"></span>
+                    <div class="month"><span>Mars</span></div>
+                </div>
+                </div>
+                <div class="item">
+                <p>Date de Commercialisations</p>
+                <div class="details">
+                    <div class="month"><span>Janvier</span></div>
+                    <span class="tiret"></span>
+                    <div class="month"><span>Mars</span></div>
+                </div>
+                </div>
+            </div> -->
+            <div class="content__details">
+              <h5>Variétés</h5>
+              <ul>
+                <li><span>Fruits</span><span>{{counter[0]}}</span></li>
+                <li><span>Poacées</span><span>{{counter[1]}}</span></li>
+                <li><span>Légumes</span><span>{{counter[2]}}</span></li>
+                <li><span>Epices</span><span>{{counter[3]}}</span></li>
+                <li><span>Légumineuses</span><span>{{counter[4]}}</span></li>
+                <li><span>Plantes et fleurs</span><span>{{counter[5]}}</span></li>
+                <li><span>Autres...</span><span>{{counter[6]}}</span></li>
+              </ul>
+            </div>
+        </div>
+      <app-calendar-products [productsList$]="productsList$" [filterItem]="filterItem"></app-calendar-products>
+    </section>
+  </div>
+</div>

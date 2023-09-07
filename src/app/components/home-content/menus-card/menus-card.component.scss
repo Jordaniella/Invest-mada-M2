@@ -1,0 +1,96 @@
+@import "../../../../styles.scss";
+/*.hexagon {
+  position: relative;
+  width: 170px;
+  height: 200px;
+  margin: 0 10px;
+  clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+  background: var(--bg-color-500);
+  @include center-block;
+  flex-direction: column;
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 300ms ease;
+  &:hover {
+    transform: scale(0.9);
+  }
+  i {
+    font-size: 2rem;
+    color: var(--secondary-color);
+  }
+  h4{
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 15px;
+    letter-spacing: 1px;
+
+    color: var(--text-black-50);
+  }
+}*/
+
+.hexagon {
+  flex: 0 1 250px;
+  max-width: 250px;
+  height: 200px;
+  // margin: 65.4px 12.5px 25px;
+  position: relative;
+  padding: 0.5rem;
+  z-index: 1;
+  box-shadow: 0 0 15px 0 rgba(0,0,0,.1);
+  clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+  @include center-block;
+  flex-direction: column;
+  transform: scale(1);
+  transition: transform 250ms ease;
+  &::after {
+    @include btn-pseudo-style;
+    transform: scale(1.5);
+    background: var(--bg-color-500);
+  }
+  &:hover {
+    transform: scale(1.1);
+    .cell__image {
+      filter: grayscale(20%);
+      opacity: 1;
+    }
+    
+    .cell__title {
+      i {
+        color: var(--text-white-900);
+      }
+    }
+  }
+  .cell__image {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(50%);
+    opacity: 40%;
+    clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+    transition: filter 500ms ease, opacity 250ms ease-out;
+  }
+  .cell__title {
+    text-align: center;
+    position: absolute;
+    top: 20%;
+    i {
+      font-size: 2rem;
+      position: relative;
+      width: 70px;
+      height: 70px;
+      line-height: 70px;
+      background-color: rgba(0,0,0,.3);
+      border-radius: 50%;
+      margin-bottom: 10px;
+      color: var(--text-white-900);
+    }
+    h4 {
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 1rem;
+      border-radius: 5px;
+      padding: 3px 6px;
+      background: rgba(0,0,0,.3);
+      color: var(--text-white-900);
+    }
+  }
+}

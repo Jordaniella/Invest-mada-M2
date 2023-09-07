@@ -1,0 +1,47 @@
+<div class="table">
+  <div class="row">
+    <header>
+      <div class="content">
+        <p class="product__number">{{productList.products.length}} Produits</p>
+        <div class="filter__list" *ngIf="checkDataFilter()">
+          <ng-container *ngFor="let item of filterList; let index = index;">
+            <div class="product__filter" (click)="removeFilter(index)">
+              <span *ngIf="item.type == 'name'">"{{item.title}}"</span>
+              <span *ngIf="item.type != 'name'">{{item.title}}</span>
+              <i class="fa-close fa-solid" *ngIf="item != undefined"></i>
+            </div>
+          </ng-container>
+          <div class="product__filter restaure" *ngIf="checkDataFilter()" (click)="removeAllFilter()">
+            <span>Restaurer</span>
+          </div>
+        </div>
+      </div>
+      <div class="content__page">
+        <span>Page {{p}} sur {{getPages()}}</span>
+      </div>
+    </header>
+    <div class="col-right">
+      <div class="products">
+        <ng-container *ngIf="productList.products.length > 0">
+          <div class="content" *ngFor="let item of productList.products | paginate:{itemsPerPage:itemPerPage, currentPage:p }">
+            <div
+              class="card"
+              [ngClass]="{ active: item.selected }"
+              (click)="getSelectedProduct(item.productName)"
+            >
+              <div class="product__image">
+                <img [src]="item.image" alt="{{ item.productName }}" />
+              </div>
+              <h4 class="product__name">{{ item.productName }}</h4>
+              <p class="product__region">{{ item.regions }}</p>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+      <pagination-controls (pageChange)="p = $event"
+                            previousLabel=""
+                            nextLabel="">
+      </pagination-controls>
+    </div>
+  </div>
+</div>

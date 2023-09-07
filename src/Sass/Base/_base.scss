@@ -1,0 +1,38 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  outline: none;
+  // overflow: hidden;
+  // box-shadow:1px 1px 3px red inset;
+}
+body {
+  font-family: var(--primary-font);
+  background-color: var(--bg-color-900);
+  overflow-x: hidden;
+}
+
+ul li {
+  list-style: none;
+  
+  i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+  }
+}
+span {
+  user-select: none;
+}
+a {
+  text-decoration: none;
+  text-transform: capitalize;
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("../../assets/fonts/NunitoSans-Regular.ttf");
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins-Regular.ttf");
+}

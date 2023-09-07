@@ -1,0 +1,62 @@
+[
+  {
+    "photo": "assets/members/jessica.jpg",
+    "name": "JESSICA Jordaniella",
+    "description": "développeuse web full stack passionnée par la création d'interfaces utilisateur engageantes et conviviales. Avec une expérience de plusieurs années dans le domaine, elle se concentre principalement sur le front-end, où elle excelle dans la conception et le développement de sites web et d'applications web."
+  },
+  {
+    "photo": "assets/members/diary.jpg",
+    "name": "ANDRIAMAMPITASOA Diary Elmane",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum porro dicta numquam obcaecati impedit saepe, quo, rem accusantium sequi fuga consequuntur maiores eius atque temporibus tempore cupiditate modi similique! Harum."
+  },
+  {
+    "photo": "assets/members/cynthia.jpg",
+    "name": "RAKOTOARISON Holiarisoa Cynthia",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum porro dicta numquam obcaecati impedit saepe, quo, rem accusantium sequi fuga consequuntur maiores eius atque temporibus tempore cupiditate modi similique! Harum."
+  },
+  {
+    "photo": "assets/members/hasina.jpg",
+    "name": "ANJARAMIARISOA Hasina Henimpiderana",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum porro dicta numquam obcaecati impedit saepe, quo, rem accusantium sequi fuga consequuntur maiores eius atque temporibus tempore cupiditate modi similique! Harum."
+  },
+  {
+    "photo": "assets/members/harena.jpg",
+    "name": "ANDRIAMANIRISOA Harena Sedera Fitiavana",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum porro dicta numquam obcaecati impedit saepe, quo, rem accusantium sequi fuga consequuntur maiores eius atque temporibus tempore cupiditate modi similique! Harum."
+  },
+  {
+    "photo": "assets/members/aina.jpg",
+    "name": "RAZAFIMAHATRATRA Aina Harisoa",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum porro dicta numquam obcaecati impedit saepe, quo, rem accusantium sequi fuga consequuntur maiores eius atque temporibus tempore cupiditate modi similique! Harum."
+  },
+  {
+    "photo": "assets/members/tendry.jpg",
+    "name": "RAKOTOARIMANANA Anjaharivola Tendrisoa",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum porro dicta numquam obcaecati impedit saepe, quo, rem accusantium sequi fuga consequuntur maiores eius atque temporibus tempore cupiditate modi similique! Harum."
+  },
+  {
+    "photo": "assets/members/erica.jpg",
+    "name": "ANDRIAMANANJATOVO NY Aintsoa Ericka",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum porro dicta numquam obcaecati impedit saepe, quo, rem accusantium sequi fuga consequuntur maiores eius atque temporibus tempore cupiditate modi similique! Harum."
+  },
+  {
+    "photo": "assets/members/joelle.jpg",
+    "name": "RAHARIMALALA Hobinirina Joelle",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum porro dicta numquam obcaecati impedit saepe, quo, rem accusantium sequi fuga consequuntur maiores eius atque temporibus tempore cupiditate modi similique! Harum."
+  },
+  {
+    "photo": "assets/members/tsanta.jpg",
+    "name": "RANAIVOSOLOHERY Ny Tsanta",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum porro dicta numquam obcaecati impedit saepe, quo, rem accusantium sequi fuga consequuntur maiores eius atque temporibus tempore cupiditate modi similique! Harum."
+  },
+  {
+    "photo": "assets/members/tatiana.jpg",
+    "name": "FALIMANJATO Fanevasoa Tatianà",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum porro dicta numquam obcaecati impedit saepe, quo, rem accusantium sequi fuga consequuntur maiores eius atque temporibus tempore cupiditate modi similique! Harum."
+  },
+  {
+    "photo": "assets/members/recteur.jpg",
+    "name": "Mr RABOANARY Julien Amédée",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum porro dicta numquam obcaecati impedit saepe, quo, rem accusantium sequi fuga consequuntur maiores eius atque temporibus tempore cupiditate modi similique! Harum."
+  }
+]

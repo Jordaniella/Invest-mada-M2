@@ -1,0 +1,8 @@
+@import '../../../styles.scss';
+
+.bios {
+    @include flex-row-space-center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 65px;
+}
