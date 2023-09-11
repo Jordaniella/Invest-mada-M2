@@ -46,6 +46,7 @@
             >li{
                 position: relative;
                 padding-bottom: 10px;
+                margin-top: 10px;
                 &::after {
                     @include element-pseudo-style;
                     bottom: 0;
